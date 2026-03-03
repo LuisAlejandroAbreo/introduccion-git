@@ -1,4 +1,4 @@
-def contar_palabras(texto):
+def contar_palabras(ruta_arch):
     """
     Cuenta las lineas en un texto.
     
@@ -8,7 +8,13 @@ def contar_palabras(texto):
     Returns:
         int: Número total de líneas.
     """
-    return len(texto.split())
+    try:
+        with open(ruta_arch, 'r', encoding='utf-8') as archivo:
+            contenido = archivo.read()
+            return len(contenido.split())
+    except FileNotFoundError:
+        print(f"Error: El archivo '{ruta_arch}' no existe.")
+        return 0
  
 def contar_lineas(texto):
     """Cuenta las lineas en un texto."""
