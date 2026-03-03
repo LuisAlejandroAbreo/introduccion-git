@@ -1,5 +1,13 @@
 def contar_palabras(texto):
-    """Cuenta las palabras en un texto."""
+    """
+    Cuenta las lineas en un texto.
+    
+    Args:
+        texto (str): La cadena de texto a analizar.
+        
+    Returns:
+        int: Número total de líneas.
+    """
     return len(texto.split())
  
 def contar_lineas(texto):
